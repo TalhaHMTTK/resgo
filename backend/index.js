@@ -11,7 +11,7 @@ app.use(cors());
 
 app.use((req,res,next)=>{
   res.setHeader("Access-Control-Allow-Origin","http://localhost:3000");
-  res.setHeader("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept"); // Corrected typo in header name
+  res.setHeader("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept"); 
   next(); // Added next() to continue to the next middleware
 });
 mongoDB();
@@ -25,8 +25,7 @@ app.use('/api',require("./Routes/DisplayComments"));
 app.use('/api',require("./Routes/CreateMenu"));
 app.use('/api',require("./Routes/CreateDiscounts"));
 app.use('/api',require("./Routes/CreateComments"));
-//app.use('/api',require("./Routes/deletecards"));
-//app.use('/api',require("./Routes/checkemail"));
+app.use('/api',require("./Routes/deletecards"));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
