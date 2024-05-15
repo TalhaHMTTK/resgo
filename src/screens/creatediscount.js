@@ -69,6 +69,7 @@ export default function CreateDiscount() {
                     ADD
                   </button>
                 </div>
+
               </form>
             </div>
           </div>

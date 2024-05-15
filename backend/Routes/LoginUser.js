@@ -20,11 +20,20 @@ router.post("/loginuser", async (req, res) => {
       console.log("User ID:", user._id); // Print user id on console
       const payload = {
         user: {
-          id: user._id
+          id: user._id,
+          role: user.role
         }
       };
       const authToken = jwt.sign(payload, jwtSecret, { expiresIn: '1h' });
-      return res.json({ success: true, authToken, userId: user._id }); // Sending user id along with authToken
+      console.log("hello world");
+      if (user.role === "restaurant_owner") {
+
+        return res.json({ success: true, authToken, role: user.role, userId: user._id, redirectUrl: '/reshome' });
+      } else if (user.role === "simple_user") {
+        return res.json({ success: true, authToken, role: user.role, userId: user._id, redirectUrl: '/' });
+      } else {
+        return res.status(403).json({ errors: "Forbidden" });
+      }
     }
   } catch (error) {
     console.error(error);

@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.form-group select {
+  width: 100%; /* Or specify a specific width */
+}
+
+.form-group select {
+  padding: 5px; /* Adjust as needed */
+}
+
+.form-group select option {
+  font-size: 14px; /* Adjust as needed */
+}
+
+.custom-btn {
+  /* Customize the background and text color */
+  background-color: #343a40; /* Dark background color */
+  color: #ffffff; /* White text color */
+  border-color: #343a40; /* Dark border color */
+
+  /* Add some padding and border radius */
+  padding: 10px 20px;
+  border-radius: 5px;
+
+  /* Add transition for smoother hover effect */
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  /* Change background and border color on hover */
+  background-color: #495057; /* Darker background color */
+  border-color: #495057; /* Darker border color */
+}
+

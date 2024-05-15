@@ -5,6 +5,8 @@ import Signup from './screens/signup';
 import Reshome from "./screens/reshome";
 import Creatediscount from "./screens/creatediscount";
 import Createmenu from "./screens/createmenu";
+import Page from "./screens/Page";
+
 
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css';
@@ -20,7 +22,10 @@ function App() {
         <Route exact path="/reshome" element={<Reshome />} /> 
         <Route exact path="/createmenu" element={<Createmenu />} /> 
         <Route exact path="/creatediscount" element={<Creatediscount />} /> 
+        <Route exact path="/Page" element={<Page />} /> 
+
       </Routes>
+      
     </Router>
   );
 }

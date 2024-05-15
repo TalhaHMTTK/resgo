@@ -5,6 +5,7 @@ export default function Login() {
   const [credentials, setCredentials] = useState({ email: "", password: ""});
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
+
       e.preventDefault();
       try {
           const response = await fetch("http://localhost:5000/api/loginuser", {
@@ -22,12 +23,20 @@ export default function Login() {
           console.log(json);
           if (!json.success) {
               alert("Enter valid Credentials");
-          } else if (json.success){
-            localStorage.setItem("authToken", json.authToken);
-
-            localStorage.setItem("userId", json.userId); // Storing the user ID in local storage
+          } else if (json.success) {
+              debugger
+              localStorage.setItem("authToken", json.authToken);
+              localStorage.setItem("userId", json.userId); // Storing the user ID in local storage
+              // talha is storing user role too
+              localStorage.setItem("userRole",json.role)
           
-            navigate("/");
+              // Check the role and redirect accordingly
+              if (json.redirectUrl) {
+                  navigate(json.redirectUrl); // Redirect to the specified URL
+              } else {
+                  // Handle if redirectUrl is not provided
+                  navigate("/"); // Default redirection to the root path
+              }
           }
       } catch (error) {
           console.error('Error:', error.message);
