@@ -36,7 +36,7 @@ export default function ShowMenu() {
                       const userId = localStorage.getItem("userId"); // Retrieve the user ID from localStorage
                       if (userId === data.Id) {
                         Nomenu=1;
-                        return <Card lable="Price" keys={data._id} Resname={data.Item} description={data.description} lable1={data.Price} ImageLink={data.ImageLink} />;
+                        return <Card lable="Price" Info={data.Id} keys={data._id} Resname={data.Item} description={data.description} lable1={data.Price} ImageLink={data.ImageLink} />;
                       } else {
                         return null;
                       }

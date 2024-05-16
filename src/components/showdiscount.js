@@ -36,7 +36,7 @@ export default function Showdiscount() {
                       const userId = localStorage.getItem("userId"); // Retrieve the user ID from localStorage
                       if (userId === data.Id) {
                         Nodiscount=1;
-                        return <Card lable="Discount" keys={data._id} Resname={data.Resname} description={data.description} lable1={data.Discount} ImageLink={data.ImageLink} />;
+                        return <Card lable="Discount" Info={data.Id} keys={data._id} Resname={data.Resname} description={data.description} lable1={data.Discount} ImageLink={data.ImageLink} />;
                       } else {
                         return null;
                       }

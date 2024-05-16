@@ -5,10 +5,11 @@ export default function Card(props) {
   const navigate = useNavigate();
 
   const userRole = localStorage.getItem("userRole");
-
+// below line i added to ckeck if user id match with card id
+  const userId = localStorage.getItem("userId");
   const handleClick = () => {
 
-
+    localStorage.setItem("selectedUser",props.Info);
     localStorage.setItem("selectedKey", props.keys);
     localStorage.setItem("selectedname", props.Resname);
     localStorage.setItem("selectedDescription", props.description);
@@ -55,8 +56,8 @@ export default function Card(props) {
               </h6>
             </div>
 
-
-            {userRole === "restaurant_owner" && (
+            
+            {userRole === "restaurant_owner" && userId === props.Info && (
               <button onClick={handleDelete}>Delete</button>
             )}
           
