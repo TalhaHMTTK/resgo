@@ -60,7 +60,7 @@ export default function Home() {
                   <div className="row grid">
                     {discard.length > 0
                       ? discard.filter(data => data.Resname.toLowerCase().includes(search.toLowerCase())).map(data => (
-                          <Card lable="Discount" keys={data._id} Resname={data.Resname} description={data.description} lable1={data.Discount} ImageLink={data.ImageLink} />                      ))
+                          <Card lable="Discount" Info={data.Id} keys={data._id} Resname={data.Resname} description={data.description} lable1={data.Discount} ImageLink={data.ImageLink} />                      ))
                       : null}
                   </div>
                 </div>

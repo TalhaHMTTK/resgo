@@ -6,6 +6,7 @@ import Comments from "../components/comments";
 import Singlecomment from "../components/singlecomment"
 
 export default function Page() {
+  var Info = localStorage.getItem("selectedUser");
  var selectedKey = localStorage.getItem("selectedKey");
  var selectedName = localStorage.getItem("selectedname");
  var selectedDescription = localStorage.getItem("selectedDescription");
@@ -33,7 +34,7 @@ export default function Page() {
  }, []);
 
  const handleRedirect = () => {
-  navigate("/reshome");
+  navigate("/cardowner");
 }
 
 

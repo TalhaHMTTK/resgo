@@ -50,6 +50,8 @@ export default function Card(props) {
           <div className="detail-box">
             <h5 style={{ color: "white" }}>{props.Resname}</h5>
             <p style={{ color: "white" }}>{props.description}</p>
+            <p style={{ color: "white" }}>Data Owner{props.Info}</p>
+            <p style={{ color: "white" }}>Logged in{userId}</p>
             <div className="options">
               <h6>
                 {props.lable} : {props.lable1}
