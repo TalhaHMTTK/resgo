@@ -9,7 +9,11 @@ localStorage.removeItem("authToken");
 localStorage.removeItem("userId");
 Navigate("/Login");
 }
+const Prole = localStorage.getItem("userRole");
+const Rname = localStorage.getItem("userName");
+console.log(Rname);
   return (
+
     <div>
       <div className="hero_area">
         <div className="bg-box">
@@ -95,7 +99,10 @@ Navigate("/Login");
                   <div className="row">
                     <div className="col-md-7 col-lg-6">
                       <div className="detail-box">
-                        <h1>Fast Food Restaurant</h1>
+                      <h1>
+                        {Prole === "restaurant_owner" ? Rname : "Fast Food Restaurant"}
+                      </h1>
+
                         <p>
                           Doloremque, itaque aperiam facilis rerum, commodi,
                           temporibus sapiente ad mollitia laborum quam quisquam

@@ -28,8 +28,9 @@ export default function Login() {
               localStorage.setItem("authToken", json.authToken);
               localStorage.setItem("userId", json.userId); // Storing the user ID in local storage
               // talha is storing user role too
-              localStorage.setItem("userRole",json.role)
-          
+              localStorage.setItem("userRole",json.role);
+              localStorage.setItem("userName",json.name)
+             // console.log("username rec in login:",json.name);
               // Check the role and redirect accordingly
               if (json.redirectUrl) {
                   navigate(json.redirectUrl); // Redirect to the specified URL
